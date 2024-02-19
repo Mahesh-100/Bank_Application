@@ -8,6 +8,6 @@ public interface BankRepository extends JpaRepository<BankAccountDTO, Integer> {
 
 	
 
-	BankAccountDTO createBankAccount(BankAccountDTO account);
+	
 	
 }

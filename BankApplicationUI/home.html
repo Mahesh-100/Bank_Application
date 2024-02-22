@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <form id="accountForm" action="" method="post">
+        <input type="hidden" id="selectedPage" name="selectedPage">
+        <header>
+                <img src="company-logo.png" alt="Company Logo">
+                <h1>PaymentApp</h1>
+        </header>
+         <div class="userDetails"></div>
+            
+        <div class="accountsList">
+         <a href="" class="AllBtn" style="float: right; margin-right: 20px;"  >Add Account</a>
+            <!-- Display accounts in radio buttons here -->
+            
+            <h2>Accounts</h2>
+            
+             <table class="Bank-table">
+             <thead>
+             <tr>
+             <th>Select</th>
+             <th>Account Number</th>
+             <th>Bank Name</th>
+             <th>IFSC code</th>
+             <th>Account type</th>
+             <th>Current Balance</th>
+           
+             </tr>
+             </thead>
+            
+             <tbody>
+            
+           
+             <tr>
+             <td><input  type="radio" name="selectedAccount" value=""></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             
+      
+             </tbody>
+             </table>
+             
+         
+        </div>
+        
+          
+        <div class="transactions">
+            <!-- Buttons for transaction requests -->
+            <input type="hidden" id="selectedAction" name="selectedAction">
+            <button  type="button" style="width:25%" class="AllBtn" onclick="validateAndRedirect('Statement')"> Statement</button>
+            
+            <button  style="width:25%"class="AllBtn" onclick="validateAndRedirect('AddMoney')"> Add Money</button>
+             
+            <button type="button" style ="width:25%" class="AllBtn" onclick="validateAndRedirect('SendMoney')">Send Money</button>
+             
+            
+        </div>
+        
+       
+           
+        </form>
+        <div>
+        <button style="width:10%" class="logout" onclick="requestlogout()">Logout</button>
+        </div>
+</body>
+</html>

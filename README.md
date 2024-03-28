@@ -1,2 +1,2 @@
 # Bank_Application
-Technologoies used for this ongoing project is springboot.
+Technologoies used for this ongoing project are springboot.

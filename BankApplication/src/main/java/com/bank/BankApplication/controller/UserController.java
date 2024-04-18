@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,17 +49,13 @@ public class UserController {
 	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
 	        }
 	    }
-	 @GetMapping("/login")
-	    public ResponseEntity<UserDTO> userDetails(@RequestBody UserDTO loginRequest) {
+	 @GetMapping("/login/{username}")
+	    public ResponseEntity<UserDTO> userDetails(@PathVariable String username) {
 	        // Retrieve user from the database based on username
-		 UserDTO user = userService.getUserByUsername(loginRequest.getUsername());
+		 UserDTO user = userService.getUserByUsername(username);
 
 		 return ResponseEntity.ok(user);
 	    }
-	
-	
-	
-
 	
 	@PostMapping("/account")
 	public BankAccountDTO createBankAccount(@RequestBody BankAccountDTO account) {

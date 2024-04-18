@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 @Table(name="user_info")
 public class UserDTO {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="userId")
 	private Integer userId;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

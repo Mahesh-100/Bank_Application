@@ -36,31 +36,31 @@ public class UserController {
 
 	}
 	
-	 @PostMapping("/login")
-	    public ResponseEntity<UserDTO> loginUser(@RequestBody UserDTO loginRequest) {
-	        // Retrieve user from the database based on username
-		 UserDTO user = userService.getUserByUsername(loginRequest.getUsername());
-
-	        if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
-	            // User found and password matches
-	            return ResponseEntity.ok(user);
-	        } else {
-	            // User not found or password does not match
-	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
-	        }
-	    }
-	 @GetMapping("/login/{username}")
-	    public ResponseEntity<UserDTO> userDetails(@PathVariable String username) {
-	        // Retrieve user from the database based on username
-		 UserDTO user = userService.getUserByUsername(username);
-
-		 return ResponseEntity.ok(user);
-	    }
-	
-	@PostMapping("/account")
-	public BankAccountDTO createBankAccount(@RequestBody BankAccountDTO account) {
-		
-		return bankService.createBankAccount(account);
-	}
+//	 @GetMapping("/login")
+//	    public ResponseEntity<UserDTO> loginUser(@RequestBody UserDTO loginRequest) {
+//	        // Retrieve user from the database based on username
+//		 UserDTO user = userService.getUserByUsername(loginRequest.getUsername());
+//
+//	        if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
+//	            // User found and password matches
+//	            return ResponseEntity.ok(user);
+//	        } else {
+//	            // User not found or password does not match
+//	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+//	        }
+//	    }
+//	 @GetMapping("/login/{username}")
+//	    public ResponseEntity<UserDTO> userDetails(@PathVariable String username) {
+//	        // Retrieve user from the database based on username
+//		 UserDTO user = userService.getUserByUsername(username);
+//
+//		 return ResponseEntity.ok(user);
+//	    }
+//	
+//	@PostMapping("/account")
+//	public BankAccountDTO createBankAccount(@RequestBody BankAccountDTO account) {
+//		
+//		return bankService.createBankAccount(account);
+//	}
 	
 }
